@@ -6,6 +6,10 @@ import App from './App';
 
 import './index.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/primereact/resources/themes/lara-light-indigo/theme.css";  //theme
+import "../node_modules/primereact/resources/primereact.min.css";                  //core css
+import "../node_modules/primeicons/primeicons.css";                                //icons
+
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(

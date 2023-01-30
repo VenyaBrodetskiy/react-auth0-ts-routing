@@ -19,31 +19,5 @@ export default function DefaultLayout() {
                 <Route path="*" element={<h1>404 - not found</h1>}></Route>
             </Routes>
         </div>
-        // <div className="defaultLayout-container">
-        //     <div className="container-fluid bg-warning">
-        //         <nav className="navbar navbar-light">
-        //             <div className="navbar-brand">Navbar</div>
-        //             <ul className="nav">
-        //                 <li className="nav-item">
-        //                     <Link to={"/"} className="nav-link active">Home</Link>
-        //                 </li>
-        //                 <li className="nav-item">
-        //                     <Link to={"/profile"} className="nav-link active">Profile</Link>
-        //                 </li>
-        //                 <li className="nav-item">
-        //                     <button className="btn btn-primary" onClick={() => loginWithRedirect()}>Log In</button>
-        //                 </li>
-        //             </ul>
-        //         </nav>
-        //     </div>
-
-        //     <div className="container-fluid bg-light">
-        //         Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
-        //     </div>
-
-        //     <footer className="footer-container">
-        //         Lorem ipsum
-        //     </footer>
-        // </div>
     )
 }

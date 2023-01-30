@@ -6,6 +6,7 @@ import ContactUsPage from '../../pages/contactUs/contactUs.page'
 import HomePage from '../../pages/home/home.page'
 import LoginPage from '../../pages/login/login.page'
 import ProfilePage from '../../pages/profile/profile.page'
+import StudentPage from '../../pages/student/student.page'
 import StudentsPage from '../../pages/students/students.page'
 import ProtectedRoute from '../../routes/protected.route'
 
@@ -19,7 +20,20 @@ export default function MainLayout() {
                 <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="/about" element={<AboutPage />}></Route>
                 <Route path="/contactus" element={<ContactUsPage />}></Route>
-                <Route path="/students" element={<StudentsPage />}></Route>
+                <Route
+                    path="/students"
+                    element={
+                        <ProtectedRoute>
+                            <StudentsPage />
+                        </ProtectedRoute>}>
+                </Route>
+                <Route
+                    path="/student"
+                    element={
+                        <ProtectedRoute>
+                            <StudentPage />
+                        </ProtectedRoute>}>
+                </Route>
                 <Route
                     path="/profile"
                     element={

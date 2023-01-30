@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function TableComponent({ data, headers }: { data: any[]; headers: string[] }) {
     return (
@@ -7,16 +7,16 @@ export default function TableComponent({ data, headers }: { data: any[]; headers
                 <table className="table table-primary">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             {headers.map((h) => (
                                 <th scope='col'>{h}</th>
                             ))}
+                            <th scope="col">Action</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((d, index) => (
+                        {data.map((d) => (
                             <tr>
-                                <th scope='col'>{index}</th>
                                 <TableRow data={d} size={headers.length}></TableRow>
                                 <th>
                                     <button className="btn btn-danger">Delete</button>

@@ -19,6 +19,9 @@ export function HeaderMainComponent() {
                         <Link to={"/profile"} className="nav-link active">Profile</Link>
                     </li>
                     <li className="nav-item">
+                        <Link to={"/student"} className="nav-link active">Add Student</Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to={"/students"} className="nav-link active">Students</Link>
                     </li>
                     <li className="nav-item">

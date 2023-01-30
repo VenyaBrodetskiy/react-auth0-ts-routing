@@ -16,16 +16,17 @@ export default function StudentsPage() {
     useEffect(() => {
         getStudents();
     }, []);
+
     return (
         <div>
             <h1>Students</h1>
             {isLoading ? (
                 <div>Loading...</div>
             ) : (
-                <TableComponent data={students} headers={["First Name", "Last Name"]} ></TableComponent>
-            )
-
-            }
+                <>
+                    <TableComponent data={students} headers={["#", "First Name", "Last Name"]} ></TableComponent>
+                </>
+            )}
         </div>
     )
 }
