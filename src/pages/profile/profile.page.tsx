@@ -10,8 +10,9 @@ export default function ProfilePage() {
             <div className="d-flex flex-column align-items-center">
                 <div className="card col-6 my-3">
                     <div className="card-header">{user?.name}</div>
-                    <img src={user?.picture} alt="" />
                     <div className="card-body">
+                        <img src={user?.picture} alt="" />
+
                         <h4 className="card-title">{user?.family_name}</h4>
                         <p className="card-text">{user?.email}</p>
                     </div>
