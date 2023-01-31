@@ -28,6 +28,9 @@ export function HeaderMainComponent() {
                         <Link to={"/recoil"} className="nav-link active">Recoil example</Link>
                     </li>
                     <li className="nav-item">
+                        <Link to={"/modal"} className="nav-link active">Modal example</Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to={"/contactus"} className="nav-link active">Contact us</Link>
                     </li>
                     <li className="nav-item">

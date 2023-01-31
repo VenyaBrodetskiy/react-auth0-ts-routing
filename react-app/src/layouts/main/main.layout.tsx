@@ -5,6 +5,7 @@ import AboutPage from '../../pages/about/about.page'
 import ContactUsPage from '../../pages/contactUs/contactUs.page'
 import HomePage from '../../pages/home/home.page'
 import LoginPage from '../../pages/login/login.page'
+import ModalPage from '../../pages/modalExample/modal.page'
 import ProfilePage from '../../pages/profile/profile.page'
 import RecoilExPage from '../../pages/recoilExample/recoilExample.page'
 import StudentPage from '../../pages/student/student.page'
@@ -47,6 +48,13 @@ export default function MainLayout() {
                     element={
                         <ProtectedRoute>
                             <RecoilExPage />
+                        </ProtectedRoute>}>
+                </Route>
+                <Route
+                    path="/modal"
+                    element={
+                        <ProtectedRoute>
+                            <ModalPage />
                         </ProtectedRoute>}>
                 </Route>
                 <Route path="*" element={<h1>404 - not found</h1>}></Route>

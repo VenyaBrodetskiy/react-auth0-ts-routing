@@ -11,3 +11,8 @@ export default function BlueButtonComponent() {
         </div>
     )
 }
+
+// const Blue2 = () => {
+//     const count = useRecoilState(countState);
+//     return <div></div>
+// }

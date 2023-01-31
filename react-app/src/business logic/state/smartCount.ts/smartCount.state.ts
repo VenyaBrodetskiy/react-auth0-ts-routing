@@ -1,20 +1,12 @@
 import { atom, selector } from "recoil";
 
-export const countState = atom({
-    key: "countState",
+const countState = atom({
+    key: "smartCountState",
     default: 0
 });
 
-export const dollarCountState = selector({
-    key: "dollarCountState",
-    get: ({ get }) => {
-        const count = get(countState);
-        return `${count}$`;
-    }
-});
-
-export const fixedCountState = selector({
-    key: "FixedCountState",
+export const smartCountState = selector({
+    key: "smartCountStateSelector",
     get: ({ get }) => {
         const count = get(countState);
         return count;
@@ -24,6 +16,5 @@ export const fixedCountState = selector({
             return;
         }
         set(countState, newValue);
-
     }
 })

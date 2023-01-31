@@ -3,7 +3,7 @@ import { IStudent } from '../../business logic/interfaces/student.interface';
 import { addStudent } from '../../business logic/services/student.service';
 import { Toast } from 'primereact/toast';
 
-export default function StudentPage() {
+export default function StudentPage({ toggleFunc }: { toggleFunc?: Function }) {
     const [state, setState] = useState<IStudent>({
         id: 0,
         firstName: "",
@@ -23,7 +23,11 @@ export default function StudentPage() {
         e.preventDefault();
         console.log("submit", state);
         await addStudent(state);
-        toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Added student' })
+        toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Added student' });
+        setTimeout(() => {
+            toggleFunc && toggleFunc();
+        }, 500);
+
     };
 
     return (
