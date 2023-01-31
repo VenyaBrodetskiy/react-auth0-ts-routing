@@ -25,6 +25,9 @@ export function HeaderMainComponent() {
                         <Link to={"/students"} className="nav-link active">Students</Link>
                     </li>
                     <li className="nav-item">
+                        <Link to={"/recoil"} className="nav-link active">Recoil example</Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to={"/contactus"} className="nav-link active">Contact us</Link>
                     </li>
                     <li className="nav-item">

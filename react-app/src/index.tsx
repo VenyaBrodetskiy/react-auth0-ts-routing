@@ -11,24 +11,28 @@ import "../node_modules/primereact/resources/primereact.min.css";               
 import "../node_modules/primeicons/primeicons.css";                                //icons
 
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <Auth0Provider
-        domain="dev-jz8i8ymmqw7p0b8t.us.auth0.com"
-        clientId="qtoM8WRPFC2FzDGGwZ2O1GOsWrf7FVYj"
-        authorizationParams={{
-            redirect_uri: window.location.origin
-        }}
-    >
-        <React.StrictMode>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </React.StrictMode>
-    </Auth0Provider>
+    <React.StrictMode>
+
+        <Auth0Provider
+            domain="dev-jz8i8ymmqw7p0b8t.us.auth0.com"
+            clientId="qtoM8WRPFC2FzDGGwZ2O1GOsWrf7FVYj"
+            authorizationParams={{
+                redirect_uri: window.location.origin
+            }}
+        >
+            <RecoilRoot>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </RecoilRoot>
+        </Auth0Provider>
+    </React.StrictMode>
 );
 
 
