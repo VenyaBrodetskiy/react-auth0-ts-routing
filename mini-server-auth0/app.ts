@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import * as dotenv from "dotenv";
-import { students } from "./data/data";
+import { Data } from "./data/data";
 import { IStudent } from "./interfaces";
 
 dotenv.config();
@@ -40,14 +40,21 @@ app.get("/api/roles", async (req: Request, res: Response) => {
 });
 
 app.get("/api/students", async (req: Request, res: Response) => {
-    res.send(students);
-})
+    res.send(Data.students);
+});
 
 app.post("/api/students", async (req: Request, res: Response) => {
     const student = req.body as IStudent;
-    student.id = students.length + 1;
-    students.push(student);
+    student.id = Data.students.length + 1;
+    Data.students.push(student);
     res.send(student);
+});
+
+app.delete("/api/students", async (req: Request, res: Response) => {
+    const student = req.body as IStudent;
+    const newStudents = Data.students.filter((s) => s.id !== student.id);
+    Data.students = newStudents;
+    res.send(Data.students);
 })
 
 app.listen(3030, () => {

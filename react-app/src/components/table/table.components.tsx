@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function TableComponent({ data, headers }: { data: any[]; headers: string[] }) {
+export default function TableComponent<T>({ data, headers, handleDelete }: { data: T[]; headers: string[], handleDelete: (d: T) => {} }) {
     return (
         <div>
             <div className="table-responsive">
@@ -19,7 +19,7 @@ export default function TableComponent({ data, headers }: { data: any[]; headers
                             <tr>
                                 <TableRow data={d} size={headers.length}></TableRow>
                                 <th>
-                                    <button className="btn btn-danger">Delete</button>
+                                    <button className="btn btn-danger" onClick={() => handleDelete(d)}>Delete</button>
                                 </th>
                             </tr>
                         ))}

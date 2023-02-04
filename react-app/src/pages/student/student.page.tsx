@@ -21,13 +21,18 @@ export default function StudentPage({ toggleFunc }: { toggleFunc?: Function }) {
 
     const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        console.log("submit", state);
-        await addStudent(state);
-        toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Added student' });
-        setTimeout(() => {
-            toggleFunc && toggleFunc();
-        }, 500);
 
+        if (state.firstName === "" || state.lastName === "" || state.email === "") {
+            toast.current?.show({ severity: 'error', summary: "Failed to add student", detail: "Couldn't add student, not enough data" })
+        }
+        else {
+            console.log("submit", state);
+            await addStudent(state);
+            toast.current?.show({ severity: 'success', summary: 'Success', detail: 'Added student' });
+            setTimeout(() => {
+                toggleFunc && toggleFunc();
+            }, 500);
+        }
     };
 
     return (

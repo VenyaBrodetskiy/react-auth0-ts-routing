@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { IStudent } from '../../business logic/interfaces/student.interface';
-import { getStudent } from '../../business logic/services/student.service';
+import { deleteStudent, getStudent } from '../../business logic/services/student.service';
 import TableComponent from '../../components/table/table.components';
 import Modal from "react-modal";
 import StudentPage from '../student/student.page';
@@ -32,6 +32,11 @@ export default function ModalPage() {
         setIsLoading(false);
     };
 
+    async function handleDeleteStudent(student: IStudent) {
+        await deleteStudent(student);
+        await getStudent();
+    }
+
     useEffect(() => {
         getStudents();
     }, [students]);
@@ -48,6 +53,7 @@ export default function ModalPage() {
                     <TableComponent
                         data={students}
                         headers={["#", "First Name", "Last Name"]}
+                        handleDelete={s => handleDeleteStudent(s)}
                     ></TableComponent>
                     <Modal
                         isOpen={modalIsOpen}
